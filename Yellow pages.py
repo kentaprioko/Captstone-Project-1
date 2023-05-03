@@ -1,7 +1,8 @@
 MasterList = [[1001,"Cuadrado","Jalan Juara Nomor 15","8374930",14412,"Turin"],
               [1002,"Dybala","Jl. Jalan No 21","847394067",71197,"Roma"],
               [1003,"Arteta","Jalan Emirates No 1","087647584927",48593,"London"],
-              [1004,"Benzemaa","Jl. Bernabeu No 34","081441273846",39483,"Madrid"]]
+              [1004,"Benzema","Jl. Bernabeu No 34","081441273846",39483,"Madrid"],
+              [1005,"Ederson","Jl. Tengah No 31","0837389392",27117,"Manchester"]]
 
 def menuUtama():
     while True :
@@ -45,7 +46,7 @@ def tampilData():
     for i in range (len(MasterList)):
         print (MasterList[i][0],end='\t')
 
-        if len(MasterList[i][1]) < 7 :
+        if len(MasterList[i][1]) <= 7 :
             print (MasterList[i][1],end='\t\t')
         else :
             print(MasterList[i][1],end='\t')
