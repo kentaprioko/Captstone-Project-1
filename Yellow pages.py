@@ -174,7 +174,15 @@ def tambahData():
     while True:
         try:
             input_telepon = int(input(f'Masukkan nomor telepon si {input_namaOrang} : '))
-            break
+            str_input_telepon = str(input_telepon)
+            if len(str_input_telepon) <5 :
+                print('Nomor telepon terlalu pendek')
+                continue
+            elif len(str_input_telepon) >15 :
+                print('Nomor telepon terlalu panjang')
+                continue
+            else:
+                break
         except:
             print('Nomor Telepon hanya bisa diisi dengan angka !')
     
@@ -264,33 +272,44 @@ def updateData():
                                 break
 
                     elif mauUpdate == 3:
-                        try:
-                            updateTelepon = int(input('Masukkan nomor telepon baru : '))
-                            str_updateTelepon = str(updateTelepon)
-                            for i in range (len(MasterList)):
-                                if MasterList[i][0] == diUpdate:
-                                    MasterList[i][3] = str_updateTelepon
-                                    print("Nomor telepon berhasil diupdate")
+                        while True:
+                            try:
+                                updateTelepon = int(input('Masukkan nomor telepon baru : '))
+                                str_updateTelepon = str(updateTelepon)
+                                if len(str_updateTelepon) <5 :
+                                    print('Nomor telepon terlalu pendek')
+                                    continue
+                                elif len(str_updateTelepon) >15 :
+                                    print('Nomor telepon terlalu panjang')
+                                    continue
+                                else:
+                                    for i in range (len(MasterList)):
+                                        if MasterList[i][0] == diUpdate:
+                                            MasterList[i][3] = str_updateTelepon
+                                            print("Nomor telepon berhasil diupdate")
+                                            break
                                     break
-                        except:
-                            print('Nomor telepon harus angka')
+                            except:
+                                print('Nomor telepon harus angka')
 
                     elif mauUpdate == 4:
-                        try:
-                            updatePos = int(input('Masukkan kode pos baru : '))
-                            str_updatePos = str(updatePos)
+                        while True:
+                            try:
+                                updatePos = int(input('Masukkan kode pos baru : '))
+                                str_updatePos = str(updatePos)
 
-                            if len(str_updatePos) == 5 :
-                                for i in range (len(MasterList)):
-                                    if MasterList[i][0] == diUpdate:
-                                        MasterList[i][4] = str_updatePos
-                                        print("Kode pos berhasil diupdate")
-                                        break
-                            else :
+                                if len(str_updatePos) == 5 :
+                                    for i in range (len(MasterList)):
+                                        if MasterList[i][0] == diUpdate:
+                                            MasterList[i][4] = str_updatePos
+                                            print("Kode pos berhasil diupdate")
+                                            break
+                                    break
+                                else :
+                                    print('Kode pos harus 5 digit dan hanya angka !')
+
+                            except:
                                 print('Kode pos harus 5 digit dan hanya angka !')
-
-                        except:
-                            print('Kode pos harus 5 digit dan hanya angka !')
 
                     elif mauUpdate == 5:
                         updateKota = str(input('Masukkan nama kota baru : '))
