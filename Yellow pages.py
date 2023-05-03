@@ -252,7 +252,7 @@ def updateData():
                     print(f"Data dengan ID {diUpdate} tidak ditemukan")
 
                 elif diUpdate == MasterList[x][0]:
-                    print("1.Nama\n2.Alamat\n3.Nomor Telepon\n4.Kode Pos\n5.Domisili")
+                    print("1.Nama\n2.Alamat\n3.Nomor Telepon\n4.Kode Pos\n5.Domisili\n6.Back to Main Menu")
                     mauUpdate = int(input('Masukkan bagian data yang ingin diupdate : '))
 
                     if mauUpdate == 1:
@@ -319,6 +319,9 @@ def updateData():
                                 print("Nama kota berhasil diupdate")
                                 break
                             break
+                    
+                    elif mauUpdate == 6 :
+                        break
                 else :
                     continue
                 break
