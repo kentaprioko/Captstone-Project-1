@@ -169,7 +169,13 @@ def sortData():
 
 def tambahData():
     simpanTambahan = []
-    input_namaOrang = input('Masukkan nama Orang : ')
+    while True :
+        input_namaOrang = input('Masukkan nama Orang : ')
+        if input_namaOrang.isalpha() == True:
+            break
+        else:
+            print('Nama hanya bisa berisi huruf')
+            continue
     input_alamat = str(input(f'Masukkan alamat si {input_namaOrang} : '))
     while True:
         try:
@@ -256,7 +262,13 @@ def updateData():
                     mauUpdate = int(input('Masukkan bagian data yang ingin diupdate : '))
 
                     if mauUpdate == 1:
-                        updateNama = str(input('Masukkan nama baru : '))
+                        while True :
+                            updateNama = str(input('Masukkan nama baru : '))
+                            if updateNama.isalpha() == True:
+                                break
+                            else:
+                                print('Nama hanya bisa berisi huruf')
+                                continue
                         for i in range (len(MasterList)):
                             if MasterList[i][0] == diUpdate:
                                 MasterList[i][1] = updateNama.capitalize()
